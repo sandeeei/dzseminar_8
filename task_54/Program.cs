@@ -10,9 +10,13 @@
 // 9 5 3 2
 // 8 4 4 2
 
+// Изначальный массив
+Console.WriteLine($"\n Заданый массив: \n");
 int[,] resultMatrix = GetMatrix(5, 3, 0, 10);
 PrintMatrix(resultMatrix);
 
+//Массив после сортировки строк
+Console.WriteLine($"\n Массив после сортировки строк:");
 ChangeRows(resultMatrix);
 PrintMatrix(resultMatrix);
 
@@ -55,21 +59,31 @@ void PrintMatrix(int[,] matr)
 
 }
 
+/// <summary>
+/// Метод сортировки строк по убыванию
+/// </summary>
+/// <param name="matr">Двумерный массив</param>
 void ChangeRows(int[,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
     {
+         int temp;
 
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            int temp;
-            if (matr[i, j] < matr[i + 1, j])
+           for (int k = j+1; k < matr.GetLength(1); k++)
+           {
+            
+           
+            if (matr[i , j] < matr[i,k])
             {
                 temp = matr[i, j];
-                matr[i,j]=matr[i+1,j];
-                matr[i+1,j]=temp;
+                matr[i, j] = matr[i,k];
+                matr[i,k] = temp;
 
             }
+           }
         }
     }
+    Console.WriteLine();
 }
