@@ -67,23 +67,24 @@ void ChangeRows(int[,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
     {
-         int temp;
+        int temp;
 
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-           for (int k = j+1; k < matr.GetLength(1); k++)
-           {
-            
-           
-            if (matr[i , j] < matr[i,k])
+            for (int k = j + 1; k < matr.GetLength(1); k++)
             {
-                temp = matr[i, j];
-                matr[i, j] = matr[i,k];
-                matr[i,k] = temp;
 
+
+                if (matr[i, j] < matr[i, k])
+                {
+                    temp = matr[i, j];
+                    matr[i, j] = matr[i, k];
+                    matr[i, k] = temp;
+
+                }
             }
-           }
         }
     }
     Console.WriteLine();
 }
+
