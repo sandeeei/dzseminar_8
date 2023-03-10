@@ -7,14 +7,16 @@
 // 18 20
 // 15 18
 
-int[,] ferstArray=GetMatrix(3,2,0,10);
-int[,] secondArray=GetMatrix(4,3,0,10);
+int[,] ferstArray = GetMatrix(3, 4, 0, 10);
+int[,] secondArray = GetMatrix(4, 3, 0, 10);
 Console.WriteLine($"\n Первый массив: \n");
 PrintMatrix(ferstArray);
 Console.WriteLine($"\n Второй массив: \n");
 PrintMatrix(secondArray);
-ComMatrix(ferstArray,secondArray);
-
+Console.WriteLine($"\n Результат произведения массивов: \n");
+PrintMatrix(ComMatrix(ferstArray, secondArray));
+//int[,] resultMatrix=ComMatrix(ferstArray,secondArray);
+//PrintMatrix(resultMatrix);
 
 /// <summary>
 /// Метод произведения 2-х двумерных массивов
@@ -26,11 +28,11 @@ int[,] ComMatrix(int[,] matr1, int[,] matr2)
 {
     int[,] array = new int[matr1.GetLength(0), matr2.GetLength(1)];
 
-    for (int i = 0; i < matr1.GetLength(0); ++i)
+    for (int i = 0; i < matr1.GetLength(0); i++)
     {
-        for (int j = 0; j < matr2.GetLength(0); ++j)
+        for (int j = 0; j < matr2.GetLength(0); j++)
         {
-            for (int k = 0; k < matr2.GetLength(1); ++k)
+            for (int k = 0; k < matr2.GetLength(1); k++)
             {
 
                 array[i, k] += matr1[i, j] * matr2[j, k];
