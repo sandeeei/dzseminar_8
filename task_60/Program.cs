@@ -35,8 +35,8 @@ int[,,] GetMatrix(int rows, int cols, int depth)
 }
 
 /// <summary>
-/// Метод печатает матрицу, которую передали на вход
-/// </summary>
+/// Метод построчно выводит элементы массива при этом ечатая его индексы
+/// /// </summary>
 /// <param name="matr">Двумерный массив</param>
 void PrintMatrix(int[,,] matr)
 {
